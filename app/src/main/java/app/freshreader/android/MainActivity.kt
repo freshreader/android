@@ -2,11 +2,13 @@ package app.freshreader.android
 
 import android.net.Uri
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.github.kittinunf.fuel.httpGet
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,46 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        val uriFromIntentData: String? = intent?.data?.toString()
+        val uriFromClipData: String? = intent?.clipData?.getItemAt(0)?.text?.toString()
+        val textViewFirst: TextView = findViewById<TextView>(R.id.textview_activity)
+
+        val uriToSave = when {
+            !uriFromIntentData.isNullOrBlank() -> {
+                uriFromIntentData
+            }
+            !uriFromClipData.isNullOrBlank() -> {
+                uriFromClipData
+            }
+            else -> null
+        }
+
+        if (uriToSave != null) {
+            textViewFirst.text = uriToSave.toString()
+
+            val accountNumber: String = "0000000000000000" // TODO: persist to (and fetch from) shared prefs
+            val encodedUri: String = Uri.encode(uriToSave.toString())
+            val finalUri: String = "https://freshreader.app/save-mobile?account_number=$accountNumber&url=$encodedUri"
+
+            val httpAsync = finalUri
+                .httpGet()
+                .responseString { _request, response, result ->
+                    if (result is com.github.kittinunf.result.Result.Success && response.statusCode == 200) {
+                        Toast.makeText(applicationContext,"Saved!", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        Toast.makeText(applicationContext,"Failed to save.", Toast.LENGTH_SHORT).show()
+                    }
+                    runOnUiThread(Runnable {
+                        run {
+                            finishAffinity()
+                        }
+                    })
+                }
+
+            httpAsync.join()
+        }
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
