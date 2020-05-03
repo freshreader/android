@@ -1,12 +1,31 @@
 <resources>
-    <string name="app_name">Freshreader</string>
+    <!-- Non-translatable strings -->
+    <string name="app_name" translatable="false">Freshreader</string>
+
+    <string name="preference_file_key" translatable="false">freshreader_shared_prefs</string>
+    <string name="shared_prefs_account_number_key" translatable="false">account_number</string>
+    <string name="shared_prefs_api_auth_token_key" translatable="false">api_auth_token</string>
+
+    <string name="freshreader_version_name_prefix" translatable="false">Freshreader v%1$s</string>
+    <string name="account_number_hint" translatable="false">0000 0000 0000 0000</string>
+
     <string name="action_settings">Settings</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
+    <string name="save">Save</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="welcome">Welcome! Let\'s get started.</string>
+    <string name="lets_start_logging_in">First, visit https://freshreader.app, and create an account. Then, type in your account number below, and save it.</string>
+    <string name="once_thats_done">Once that\'s done, you can start saving content to your Freshreader list by using the "Share" menu in other apps.️</string>
+    <string name="im_working_on">I\'m working on showing your list of saved items here, so you can access them directly from the app.</string>
+    <string name="follow">Follow @FreshreaderApp on Twitter (https://twitter.com/freshreaderapp), or follow the GitHub repo (https://github.com/freshreader/android) to stay tuned! ✌</string>
+
+    <string name="saved_toast_msg">Saved!</string>
+    <string name="failed_to_save_toast_msg">Failed to save.</string>
+    <string name="easter_egg">This feature is not ready yet. Nice find!</string>
+    <string name="freshreader_logo">Freshreader logo</string>
+    <string name="valid_account_number">Valid account number.</string>
 </resources>
