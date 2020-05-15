@@ -6,7 +6,7 @@ This repository contains the source code of the Freshreader application for Andr
 
 ## Download the application
 
-Download the latest APK for sideloading: [`freshreader-v1.0.0.apk`](https://github.com/freshreader/browser-extension/releases/download/v1.0.0/freshreader-v1.0.0.apk)
+Download the latest APK for sideloading: [`freshreader-v1.0.0.apk`](https://github.com/freshreader/android/releases/download/v1.0.0/freshreader-v1.0.0.apk)
 
 ## Contributing
 All pull requests are welcome! Simply fork this repo to your account, do your changes in a new branch, then create a pull request against this repo. Thanks! :)
