@@ -14,6 +14,10 @@ import androidx.fragment.app.Fragment
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.Headers
 import com.github.kittinunf.fuel.json.responseJson
+import android.content.Intent
+
+
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -41,6 +45,8 @@ class FirstFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
             getApiTokenForUserAccountNumber(editText)
+            val intent = Intent(context, SavedItemsListActivity::class.java)
+            startActivity(intent)
         }
     }
 
