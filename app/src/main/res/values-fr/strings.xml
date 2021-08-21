@@ -9,11 +9,11 @@
     <string name="welcome">Bienvenue! Commençons.</string>
     <string name="lets_start_logging_in">D\'abord, visitez https://freshreader.app, et créez-vous un compte. Ensuite, tapez votre numéro de compte ci-dessous, et sauvegardez-le.</string>
     <string name="once_thats_done">Une fois que c\'est fait, vous pouvez commencer à sauvegarder du contenu à votre liste Freshreader en utilisant le menu "Partager" depuis d\'autres applications.️</string>
-    <string name="im_working_on">Je travaille actuellement à afficher votre liste de contenu sauvegardé afin que vous puissez lire votre contenu directement depuis l\'application.</string>
-    <string name="follow">Suivez @FreshreaderApp sur Twitter (https://twitter.com/freshreaderapp), ou suivez le dépôt GitHub (https://github.com/freshreader/android) pour rester à l\'affût des nouveaux développement! ✌</string>
+    <string name="follow">Suivez le dépôt GitHub (https://github.com/freshreader/android) pour rester à l\'affût des nouveaux développement.</string>
     <string name="saved_toast_msg">Sauvegardé!</string>
     <string name="failed_to_save_toast_msg">Échec de la sauvegarde.</string>
     <string name="easter_egg">Cette fonctionnalité n\'est pas encore disponible. Belle trouvaille!</string>
     <string name="freshreader_logo">Logo Freshreader</string>
     <string name="valid_account_number">Numéro de compte valide.</string>
+    <string name="title_activity_saved_items_list">Vos items sauvegardés</string>
 </resources>
